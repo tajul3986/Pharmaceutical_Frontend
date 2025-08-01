@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+
+  <span><button mat-button routerLink="home"><h2><i class="fa-solid fa-house"></i>  Pharma Management System</h2></button></span>
+  <span class="spacer"></span>
+
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search medicine" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit" style="color: aliceblue;">Search</button>
+      </form>
+
+<!-- <button mat-button routerLink="cart"><a><i class="fa-solid fa-cart-plus"></i></a></button> -->
+
+      <li class="nav-item">
+        <a class="nav-link position-relative" routerLink="cart">
+          <i class="fa-solid fa-cart-plus"></i>       
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            *ngIf="cartCount > 0"
+          >
+            {{ cartCount }}
+          </span>
+        </a>
+      </li>
+
+<button mat-button [matMenuTriggerFor]="productsMenu">Medicines <span style='font-size:10px;'>&#11167;</span></button>
+
+<mat-menu #productsMenu="matMenu">
+  
+  <button mat-menu-item [routerLink]="'productcard'">Medicine</button>
+  <button mat-menu-item [routerLink]="'cart'">Medicine Cart</button>
+   <button mat-menu-item [routerLink]="'subcategory'">Medicine Details</button>
+  
+  <button mat-menu-item [routerLink]="'pfcliti'">Medicine Facilities</button>
+</mat-menu>
+
+  <!-- <button mat-button routerLink="admin">Dashboard</button> -->
+  <button mat-button routerLink="login">Login</button>
+  <button mat-button routerLink="regi">Register</button>
+
+
+</mat-toolbar>

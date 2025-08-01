@@ -1,0 +1,77 @@
+<h2>Medicine Details</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of categories">
+      <td>{{ cat.name }}</td>
+      <td>{{ cat.code }}</td>
+      <td>{{ cat.description }}</td>
+      <td><button (click)="deleteCategory(cat.id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+ <!-- <h2>Medicine Details</h2>
+
+<table class="category-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+     Form Row Inside Table Head 
+    <tr>
+      <td>
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="category.name"
+          placeholder="Name"
+          required
+        />
+      </td>
+      <td>
+        <input
+          type="number"
+          name="code"
+          [(ngModel)]="category.code"
+          placeholder="Code"
+          required
+        />
+      </td>
+      <td>
+        <textarea
+          name="description"
+          [(ngModel)]="category.description"
+          placeholder="Description"
+          required
+        ></textarea>
+      </td>
+      <td>
+        <button (click)="onSubmit()">Add</button>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of categories">
+      <td>{{ cat.name }}</td>
+      <td>{{ cat.code }}</td>
+      <td>{{ cat.description }}</td>
+      <td>
+        <button (click)="deleteCategory(cat.id)" class="delete-btn">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->

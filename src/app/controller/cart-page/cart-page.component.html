@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="cart-header">
+    <h1><i class="fas fa-shopping-cart"></i> My Bag</h1>
+  </div>
+
+  <div class="cart-content">
+    <div class="cart-items">
+      <table class="cart-table" *ngIf="cartItems.length > 0; else emptyCart">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th style="text-align: right">Unit Price</th>
+            <th>Quantity</th>
+            <th style="text-align: right">Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems">
+            <td>
+              <div class="product-info">
+                <img
+                  [src]="'http://localhost:8080/image/' + item.image"
+                  alt="{{ item.name }}"
+                  class="product-image"
+                />
+                <!-- <img
+                  [src]="item.image"                  
+                  alt="{{ item.name }}"
+                  class="product-image"
+                /> -->
+               
+                <div>
+                  <div class="product-title">{{ item.name }}</div>
+                  <div class="seller-info">
+                    Product Code: {{ item.productCode }}
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="price">৳{{ item.price }}</td>
+            <td>
+              <div class="quantity-control">
+                <button class="quantity-btn" (click)="decreaseQuantity(item)">
+                  -
+                </button>
+                <input
+                  type="text"
+                  class="quantity-input"
+                  [value]="item.quantity"
+                  readonly
+                />
+                <button class="quantity-btn" (click)="increaseQuantity(item)">
+                  +
+                </button>
+              </div>
+            </td>
+            <td class="price">৳{{ item.totalPrice }}</td>
+            <td>
+              <button class="remove-btn" (click)="removeItem(item)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Empty Cart Message -->
+      <ng-template #emptyCart>
+        <div style="padding: 20px; text-align: center; font-size: 18px">
+          🛒 Your bag is empty.
+        </div>
+      </ng-template>
+      <button class="checkout-btn" (click)="proceedToCheckout()">
+        PROCEED TO DELIVERY
+      </button>
+    </div>
+
+    <!-- order summary -->
+    <div class="cart-summary">
+      <h3 class="summary-title">Order Summary</h3>
+
+      <div class="price-row">
+        <span>Items Price ({{ cartItems.length }} items)</span>
+        <span>৳{{ getItemsTotal() }}</span>
+      </div>
+
+      <div class="price-row">
+        <span>Delivery Fee</span>
+        <span>৳{{ deliveryFee }}</span>
+      </div>
+
+      <div class="subtotal-row">
+        <span>Subtotal</span>
+        <span>৳{{ getItemsTotal() + deliveryFee }}</span>
+      </div>
+
+      <div class="vat-row">
+        <span>VAT (15%)</span>
+        <span>৳{{ getVAT().toFixed(2) }}</span>
+      </div>
+
+      <div class="grand-total">
+        <div class="price-row">
+          <span>Grand Total</span>
+          <span>৳{{ getGrandTotal().toFixed(2) }}</span>
+        </div>
+      </div>
+      
+      <div class="secure-checkout">
+        <i class="fas fa-lock"></i>
+        <span>Secure Checkout</span>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,103 @@
+<!-- <div class="edit-medicine-container">
+  <h2>Edit Medicine</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <label>Product Code:</label>
+    <input formControlName="productCode" type="text" />
+    <label>Name:</label>
+    <input formControlName="name" type="text" />
+
+    <label>Price:</label>
+    <input formControlName="price" type="number" />
+
+    <label>Description:</label>
+    <textarea formControlName="description"></textarea>
+
+
+    <label for="category">Category:</label>
+    <select formControlName="category" id="category" class="form-control">
+      <option value="" disabled>Select a Category</option>
+      <option value="vaccine">Vaccine</option>
+      <option value="neurology">Neurology</option>
+      <option value="cardiac">Cardiac</option>
+      <option value="gastrology">Gastrology</option>
+    </select>
+
+    <label for="subcategory">Sub Category:</label>
+    <select formControlName="subcategory" id="subcategory" class="form-control">
+      <option value="" disabled>Select a subcategory</option>
+      <option value="tablet">Tablet</option>
+      <option value="capsule">Capsule</option>
+      <option value="syrup">Syrup</option>
+      <option value="injection">Injection</option>
+    </select>
+  
+    <label>Stock:</label>
+    <input formControlName="stock" type="number" />
+
+    <label>Image URL:</label>
+    <input formControlName="image" type="text" />
+
+    <button type="submit" [disabled]="productForm.invalid">Update</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div> -->
+
+
+
+<div class="edit-medicine-container">
+  <h2>Edit Medicine</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-field">
+      <label>Product Code</label>
+      <input type="text" formControlName="productCode">
+    </div>
+
+    <div class="form-field">
+      <label>Product Name</label>
+      <input type="text" formControlName="name">
+    </div>
+
+    <div class="form-field">
+      <label>Price</label>
+      <input type="number" formControlName="price" min="0" step="0.01">
+    </div>
+
+    <div class="form-field">
+      <label>Description</label>
+      <textarea formControlName="description" rows="4"></textarea>
+    </div>
+
+    <div class="form-field">
+      <label>Category</label>
+      <select formControlName="category">
+        <option value="" disabled>Select a category</option>
+        <option *ngFor="let c of categories" [value]="c.name">{{ c.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label>Sub Category</label>
+      <select formControlName="subcategory">
+        <option value="" disabled>Select a subcategory</option>
+        <option *ngFor="let s of subcategories" [value]="s.name">{{ s.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label>Stock</label>
+      <input type="number" formControlName="stock" min="0">
+    </div>
+
+    <div class="form-field">
+      <label>Image URL</label>
+      <input type="text" formControlName="image">
+    </div>
+
+    <button type="submit" [disabled]="productForm.invalid">Update</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>

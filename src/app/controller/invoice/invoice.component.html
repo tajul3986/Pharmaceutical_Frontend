@@ -1,0 +1,53 @@
+<div class="invoice-container" *ngIf="order">
+  <div id="invoice">
+  <h1>Invoice</h1>
+  <h2>Pharma</h2>
+  <div class="invoice-header">
+    <!-- <p><strong>Order Code:</strong> {{ order.id }}</p> -->
+    <p><strong>Order Code:</strong> {{ order.orderCode }}</p>
+    <p><strong>Date:</strong> {{ order.date | date: 'medium' }}</p>
+    <p><strong>Name:</strong> {{ order.customerName }}</p>
+    <p><strong>Phone:</strong> {{ order.phone }}</p>
+    <!-- <p><strong>Payment Status:</strong> {{ order.paymentData }}</p> -->
+     <p><strong>Payment Method:</strong>
+      {{ order.paymentMethod === 'cod' ? 'Cash on Delivery' :
+      order.paymentMethod === 'card' ? 'Card Payment (Paid)' :
+      order.paymentMethod === 'mobile' && order.mobileType ? order.mobileType + ' (Paid)' :
+    'Unknown' }}
+    </p>
+    <p><strong>Address:</strong> {{ order.address }}</p>
+  </div>
+
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Qty</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of order.items; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price | currency: 'BDT' }}</td>
+        <td>{{ item.quantity * item.price | currency: 'BDT' }}</td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <div class="invoice-summary">
+    <p><strong>Subtotal:</strong> {{ order.subtotal | currency: 'BDT' }}</p>
+    <p><strong>VAT (15%):</strong> {{ order.vat | currency: 'BDT' }}</p>
+    <p><strong>Delivery Fee:</strong> {{ order.deliveryFee | currency: 'BDT' }}</p>
+    <p><strong>Grand Total:</strong> {{ order.total | currency: 'BDT' }}</p>
+  </div>
+</div>
+  <div class="button-container">
+  <button (click)="printInvoice()">Print Invoice</button>
+  <!-- <button (click)="downloadPDF()">Download PDF</button> -->
+</div>
+</div>

@@ -1,0 +1,51 @@
+<form [formGroup]="warehouseForm" (ngSubmit)="onSubmit()" class="warehouse-form">
+  <h2>{{ isEditMode ? 'Edit Warehouse' : 'Create Warehouse' }}</h2>
+
+  <!-- Name -->
+  <div class="form-field">
+    <label>Name *</label>
+    <input type="text" formControlName="name">
+    <div *ngIf="warehouseForm.get('name')?.invalid && warehouseForm.get('name')?.touched" 
+         class="error">Name is required</div>
+  </div>
+
+  <!-- Location -->
+  <div class="form-field">
+    <label>Location *</label>
+    <input type="text" formControlName="location">
+    <div *ngIf="warehouseForm.get('location')?.invalid && warehouseForm.get('location')?.touched" 
+         class="error">Location is required</div>
+  </div>
+
+  <!-- Capacity -->
+  <div class="form-field">
+    <label>Capacity *</label>
+    <input type="number" formControlName="capacity">
+    <div *ngIf="warehouseForm.get('capacity')?.hasError('required')" class="error">Capacity is required</div>
+    <div *ngIf="warehouseForm.get('capacity')?.hasError('min')" class="error">Minimum capacity is 1</div>
+  </div>
+
+  <!-- Contact Email -->
+  <div class="form-field">
+    <label>Contact Email *</label>
+    <input type="email" formControlName="contactEmail">
+    <div *ngIf="warehouseForm.get('contactEmail')?.hasError('required')" class="error">Email is required</div>
+    <div *ngIf="warehouseForm.get('contactEmail')?.hasError('email')" class="error">Invalid email format</div>
+  </div>
+
+  <!-- Description -->
+  <div class="form-field">
+    <label>Description</label>
+    <textarea formControlName="description" rows="3"></textarea>
+  </div>
+
+  <!-- Manager -->
+  <div class="form-field">
+    <label>Manager</label>
+    <input type="text" formControlName="manager">
+  </div>
+
+  <button type="submit" [disabled]="warehouseForm.invalid">
+    {{ isEditMode ? 'Update' : 'Create' }}
+  </button>
+</form>

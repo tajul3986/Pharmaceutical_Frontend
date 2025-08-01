@@ -1,0 +1,57 @@
+
+<div class="product-list-container">
+  <!-- Loading state -->
+  <div *ngIf="isLoading" class="loading">Loading...</div>
+
+  <!-- Error message -->
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <!-- Product list -->
+  <div *ngIf="!isLoading && !errorMessage">
+    <h2>Medicine List</h2>
+
+    <div class="top-bar">
+    <button [routerLink]="['/admin/addmedicine']">+ Add Medicine</button>
+  </div>
+    
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Code</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Sub_Category</th>
+          <th>Stock</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products" class="product-row">
+          <td>{{ product.id }}</td>
+          <td>{{ product.productCode }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price | currency:'BDT ' }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.subcategory}}</td>
+          <td>{{ product.stock }}</td>
+          <!-- <td>{{ product.image}}</td> -->
+          <img [src]="'http://localhost:8080/image/' + product.image" height="70" width="70">
+           <!-- <td>
+            <img [src]="'http://localhost:8080/image/' + product.image" width="100" height="100" />
+           </td> -->
+
+          <td class="action-buttons"> 
+            <!-- <button routerLink="/addmedicine">Edit</button> -->
+             <button (click)="editProduct(product.id)">Edit</button>
+            <button (click)="deleteProduct(product.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

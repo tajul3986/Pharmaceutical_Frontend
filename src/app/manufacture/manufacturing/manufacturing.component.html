@@ -1,0 +1,96 @@
+<!-- send-to-manufacturing.component.html -->
+<form #manufacturingForm="ngForm" (ngSubmit)="onSubmit(manufacturingForm)" class="form-container">
+
+  <div class="form-group">
+    <label for="requestCode">Request Code</label>
+    <input
+      type="text"
+      id="requestCode"
+      name="requestCode"
+      [(ngModel)]="manufacturingData.requestCode"
+      class="form-control" />
+  </div>
+
+  <!-- ✅ Added Date Field -->
+  <div class="form-group">
+    <label for="rqstDate">Request Date</label>
+    <input
+      type="date"
+      id="rqstDate"
+      name="rqstDate"
+      [(ngModel)]="manufacturingData.rqstDate"
+      class="form-control" />
+  </div>
+
+  <div class="material-group" *ngFor="let item of manufacturingData.items; let i = index">
+    <div class="form-group">
+      <label>Raw Material {{ i + 1 }}</label>
+      <select
+        name="rawMaterial{{i}}"
+        [(ngModel)]="item.rawMaterialId"
+        class="form-control">
+        <option *ngFor="let material of rawMaterials" [value]="material.id">
+          {{ material.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity</label>
+      <input
+        type="number"
+        name="quantity{{i}}"
+        [(ngModel)]="item.quantity"
+        class="form-control" />
+    </div>
+
+    <button type="button" class="remove-btn" (click)="removeItem(i)" *ngIf="manufacturingData.items.length > 1">Remove</button>
+  </div>
+
+  <button type="button" class="add-btn" (click)="addItem()">+ Add Raw Material</button>
+
+  <button type="submit" class="submit-btn mt-3">Send to Manufacturing</button>
+
+</form>
+
+
+<br>
+
+<hr>
+
+
+<div class="container">
+  <h2>Manufacturing Requests</h2>
+
+  <table class="styled-table" *ngIf="requests.length > 0; else noData">
+    <thead>
+      <tr>
+        <th>Request Code</th>
+        <th>Items</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests">
+        <td>{{ request.requestCode }}</td>
+        
+        <td>
+          <ul>
+            <li *ngFor="let item of request.items">
+              Material ID: {{ item.rawMaterialId }} | Qty: {{ item.quantity }}
+            </li>
+          </ul>
+        </td>
+        <td>{{ request.status || 'Recieved' }}</td>
+        <td>{{ request.rqstDate}}</td>
+        <!-- <td>{{ request.createdDate | date: 'short' }}</td> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p>No manufacturing requests found.</p>
+  </ng-template>
+</div>
+

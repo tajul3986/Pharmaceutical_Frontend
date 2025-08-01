@@ -1,0 +1,129 @@
+
+
+ <div class="container">
+  <h2>📊 Sales Summary Report</h2>
+
+  <div class="summary-cards">
+    <div class="summary-card green">
+      <h3>Today's Sales</h3>
+      <p>{{ todaySales | currency:'BDT' }}</p>
+    </div>
+    <div class="summary-card blue">
+      <h3>Monthly Sales</h3>
+      <p>{{ monthlySales | currency:'BDT' }}</p>
+    </div>
+    <div class="summary-card yellow">
+      <h3>Yearly Sales</h3>
+      <p>{{ yearlySales | currency:'BDT' }}</p>
+    </div>
+  </div>
+
+  <div class="table-card dark">
+    <div class="table-title">🏆 Top Selling Medicines</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Medicine Name</th>
+          <th>Quantity Sold</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medicine of topSellingMedicines">
+          <td>{{ medicine.name }}</td>
+          <td>{{ medicine.quantitySold }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card blue">
+    <div class="table-title">📅 Today's Medicine Sales (Details)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Medicine</th>
+          <th>Quantity</th>
+          <th>Price (৳)</th>
+          <th>Total (৳)</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of detailedTodayList">
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.total }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ item.time }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br><br>
+  
+<div class="sales-card">
+  <div class="sales-header">
+    <span>🗓️ Monthly Medicine Sales (Details)</span>
+    <input type="text" class="form-control" placeholder="Search by name or date"
+           [(ngModel)]="monthlySearch" (input)="filterMonthlySales()" />
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-sm table-striped sales-table">
+      <thead>
+        <tr>
+          <th>Medicine</th>
+          <th>Quantity</th>
+          <th>Price (৳)</th>
+          <th>Total (৳)</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filteredMonthlyList">
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.total }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ item.time }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sales-card">
+  <div class="sales-header">
+    <span>📆 Yearly Medicine Sales (Details)</span>
+    <input type="text" class="form-control" placeholder="Search by name or date"
+           [(ngModel)]="yearlySearch" (input)="filterYearlySales()" />
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-sm table-striped sales-table">
+      <thead>
+        <tr>
+          <th>Medicine</th>
+          <th>Quantity</th>
+          <th>Price (৳)</th>
+          <th>Total (৳)</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filteredYearlyList">
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.total }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ item.time }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

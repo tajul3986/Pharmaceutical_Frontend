@@ -1,0 +1,134 @@
+<!-- 
+ <form #rawData="ngForm" (ngSubmit)="addRaw(rawData.value)" class="product-form">
+  <h2 style="text-align: center;">Add Raw Materials</h2>
+
+  <div class="form-row">
+    <div>
+      <label for="name">Material Name:</label>
+      <input type="text" name="name" id="name" [ngModel] />
+    </div>
+    <div>
+      <label for="code">Code:</label>
+      <input type="text" name="code" id="code" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" name="description" id="description" [ngModel] />
+    </div>
+    <div>
+      <label for="quantity">Quantity:</label>
+      <input type="text" name="quantity" id="quantity" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div>
+      <label for="unit">Unit:</label>
+      <input type="text" name="unit" id="unit" [ngModel] />
+    </div>
+    <div>
+      <label for="pricePerUnit">Price/Unit:</label>
+      <input type="text" name="pricePerUnit" id="pricePerUnit" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    
+    <div>
+      <label for="expiryDate">Expire Date:</label>
+      <input type="date" name="expiryDate" id="expiryDate" [ngModel] />
+    </div>
+    
+    <div>
+      <label for="batchNumber">Batch Number:</label>
+      <input type="text" name="batchNumber" id="batchNumber" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div>
+      <label for="storageLocation">Storage Location:</label>
+      <input type="text" name="storageLocation" id="storageLocation" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div>
+      <label for="status">Status:</label>
+      <input type="text" name="status" id="status" [ngModel] />
+    </div>
+  </div>
+
+  <input type="submit" value="Save" />
+</form> -->
+
+
+
+<form #rawData="ngForm" (ngSubmit)="addRaw(rawData.value)" class="product-form">
+  <h2><i class="fas fa-flask"></i> Add Raw Materials</h2>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name"><i class="fas fa-box"></i> Material Name:</label>
+      <input type="text" name="name" id="name" [ngModel] />
+    </div>
+    <div class="form-group">
+      <label for="code"><i class="fas fa-barcode"></i> Code:</label>
+      <input type="text" name="code" id="code" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="description"><i class="fas fa-align-left"></i> Description:</label>
+      <input type="text" name="description" id="description" [ngModel] />
+    </div>
+    <div class="form-group">
+      <label for="quantity"><i class="fas fa-balance-scale"></i> Quantity:</label>
+      <input type="text" name="quantity" id="quantity" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="unit"><i class="fas fa-ruler"></i> Unit:</label>
+      <input type="text" name="unit" id="unit" [ngModel] />
+    </div>
+    <div class="form-group">
+      <label for="pricePerUnit"><i class="fas fa-dollar-sign"></i> Price/Unit:</label>
+      <input type="text" name="pricePerUnit" id="pricePerUnit" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="expiryDate"><i class="fas fa-calendar-alt"></i> Expiry Date:</label>
+      <input type="date" name="expiryDate" id="expiryDate" [ngModel] />
+    </div>
+    <div class="form-group">
+      <label for="batchNumber"><i class="fas fa-layer-group"></i> Batch Number:</label>
+      <input type="text" name="batchNumber" id="batchNumber" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="storageLocation"><i class="fas fa-warehouse"></i> Storage Location:</label>
+      <input type="text" name="storageLocation" id="storageLocation" [ngModel] />
+    </div>
+    <div class="form-group">
+      <label for="status"><i class="fas fa-check-circle"></i> Status:</label>
+      <input type="text" name="status" id="status" [ngModel] />
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit">
+      <i class="fas fa-save"></i> Save
+    </button>
+  </div>
+</form>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />

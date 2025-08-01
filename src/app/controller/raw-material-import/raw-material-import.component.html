@@ -1,0 +1,101 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<form #importForm="ngForm" (ngSubmit)="submitImport()" class="form-container">
+  <h2><i class="fas fa-boxes-packing"></i> Import Raw Material</h2>
+
+  <div class="form-grid">
+    <div class="form-group">
+      <label><i class="fas fa-id-card"></i> Seller ID:</label>
+      <select [(ngModel)]="importRecord.sellerId" name="sellerId">
+        <option value="" disabled selected>Select seller Id</option>
+        <option *ngFor="let s of seller" [value]="s.id">{{ s.id }}</option>
+      </select>
+    </div>
+
+    <!-- <div class="form-group">
+      <label><i class="fas fa-cubes"></i> Material ID:</label>
+      <select [(ngModel)]="importRecord.materialId" name="materialId">
+        <option value="" disabled selected>Select material Id</option>
+        <option *ngFor="let m of materials" [value]="m.id">{{ m.id }}</option>
+      </select>
+    </div> -->
+
+    <div class="form-group">
+      <label><i class="fas fa-user"></i> Seller:</label>
+      <select [(ngModel)]="importRecord.sellerName" name="sellerName">
+        <option value="" disabled selected>Select seller</option>
+        <option *ngFor="let s of seller" [value]="s.name">{{ s.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-box"></i> Material:</label>
+      <select [(ngModel)]="importRecord.materialName" name="materialName">
+        <option value="" disabled selected>Select material</option>
+        <option *ngFor="let m of materials" [value]="m.name">{{ m.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-balance-scale"></i> Quantity:</label>
+      <input type="number" [(ngModel)]="importRecord.quantity" name="quantity" min="0" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-dollar-sign"></i> Unit Price:</label>
+      <input type="number" [(ngModel)]="importRecord.unitPrice" name="unitPrice" min="0" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-money-bill-wave"></i> Total Price:</label>
+      <input type="number" [value]="calculateTotal()" readonly />
+    </div>
+
+    <div class="form-group">
+      <label for="importDate"><i class="fas fa-calendar-alt"></i> Import Date:</label>
+      <input type="date" id="importDate" [(ngModel)]="importDate" name="importDate" />
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">
+    <i class="fas fa-upload"></i> Import
+  </button>
+</form>
+
+<hr />
+
+<h2 style="text-align: center;"><i class="fas fa-history"></i> Import History</h2>
+<table class="import-table">
+  <thead>
+    <tr>
+      <th>Seller ID</th>
+      <!-- <th>Material ID</th> -->
+      <th>Seller</th>
+      <th>Material</th>
+      <th>Qty</th>
+      <th>Unit Price</th>
+      <th>Total</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of importHistory">
+      <td>{{ record.sellerId }}</td>
+      <!-- <td>{{ record.materialId }}</td> -->
+      <td>{{ record.sellerName }}</td>
+      <td>{{ record.materialName }}</td>
+      <td>{{ record.quantity }}</td>
+      <td>{{ record.unitPrice }}</td>
+      <td>{{ record.totalPrice }}</td>
+      <td>{{ record.importDate | date: 'mediumDate' }}</td>
+      <td>
+        <button (click)="deleteImport(record.id!)" class="delete-btn">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

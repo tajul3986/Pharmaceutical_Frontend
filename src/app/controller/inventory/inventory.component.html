@@ -1,0 +1,24 @@
+<h2 class="text-center">Inventory Management</h2>
+
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Product</th>
+      <th>Location</th>
+      <th>Quantity</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of inventoryList">
+      <td>{{ item.id }}</td>
+      <td>{{ item.productName }}</td>
+      <td>{{ item.location }}</td>
+      <td [ngClass]="{'text-danger': item.quantity < 30}">
+        {{ item.quantity }}
+      </td>
+      <td>{{ item.lastUpdated }}</td>
+    </tr>
+  </tbody>
+</table>

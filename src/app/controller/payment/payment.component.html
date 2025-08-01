@@ -1,0 +1,75 @@
+<div class="payment-container">
+  <h2>Select Payment Method</h2>
+  <form #form="ngForm" (ngSubmit)="submitPayment()" novalidate>
+
+    <!-- Payment Method Selection -->
+    <div class="payment-methods">
+      <label class="method-option" [class.active]="selectedMethod === 'mobile'">
+        <input type="radio" name="method" [(ngModel)]="selectedMethod" value="mobile" required />
+        <img src="assets/images/mobile-banking.png" alt="" width="40" />
+        Mobile Banking
+      </label>
+
+      <label class="method-option" [class.active]="selectedMethod === 'card'">
+        <input type="radio" name="method" [(ngModel)]="selectedMethod" value="card" required />
+        <img src="assets/images/card-icon.png" alt="" width="40" />
+        Card
+      </label>
+
+      <label class="method-option" [class.active]="selectedMethod === 'cod'">
+        <input type="radio" name="method" [(ngModel)]="selectedMethod" value="cod" required />
+        <img src="assets/images/cash-delivery.png" alt="" width="40" />
+        Cash On Delivery
+      </label>
+    </div>
+
+    <!-- Mobile Banking Details -->
+    <div *ngIf="selectedMethod === 'mobile'" class="form-section">
+      <h3>Select Mobile Wallet</h3>
+      <div class="wallet-options">
+        <label class="wallet-option" [class.active]="paymentData.mobileType === 'bKash'">
+          <input type="radio" name="mobileType" [(ngModel)]="paymentData.mobileType" value="bKash" required />
+          <img src="assets/Image/bkash.png" width="50" /> bKash
+        </label>
+        <label class="wallet-option" [class.active]="paymentData.mobileType === 'Nagad'">
+          <input type="radio" name="mobileType" [(ngModel)]="paymentData.mobileType" value="Nagad" required />
+          <img src="assets/Image/nagad.png" width="50" /> Nagad
+        </label>
+        <label class="wallet-option" [class.active]="paymentData.mobileType === 'Rocket'">
+          <input type="radio" name="mobileType" [(ngModel)]="paymentData.mobileType" value="Rocket" required />
+          <img src="assets/Image/rocket.png" width="50" /> Rocket
+        </label>
+      </div>
+
+      <div class="wallet-form">
+        <label>Mobile Number:</label>
+        <input type="text" name="mobileNumber" [(ngModel)]="paymentData.mobileNumber" required />
+
+        <label>Transaction ID:</label>
+        <input type="text" name="transactionId" [(ngModel)]="paymentData.transactionId" required />
+      </div>
+    </div>
+
+    <!-- Card Details -->
+    <div *ngIf="selectedMethod === 'card'" class="form-section">
+      <label>Full Name on Card:</label>
+      <input type="text" name="fullName" [(ngModel)]="paymentData.fullName" required />
+
+      <label>Card Number:</label>
+      <input type="text" name="cardNumber" [(ngModel)]="paymentData.cardNumber" maxlength="16" required />
+
+      <label>Expiry Date:</label>
+      <input type="month" name="expiryDate" [(ngModel)]="paymentData.expiryDate" required />
+
+      <label>CVV:</label>
+      <input type="text" name="cvv" [(ngModel)]="paymentData.cvv" maxlength="3" required />
+    </div>
+
+    <!-- COD -->
+    <div *ngIf="selectedMethod === 'cod'" class="form-section">
+      <p>You will pay in cash upon delivery.</p>
+    </div>
+
+    <button type="submit">💳 Pay Now</button>
+  </form>
+</div>

@@ -1,0 +1,34 @@
+/* Toolbar styles */
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* .spacer {
+  flex: 1 1 auto;
+} */
+
+.d-flex{
+  margin-right: 60px;
+  width: 380px;
+}
+
+
+
+/* cart */
+.badge {
+  min-width: 20px;
+  min-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+

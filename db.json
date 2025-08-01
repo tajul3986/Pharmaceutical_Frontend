@@ -1,0 +1,420 @@
+{
+  "raw": [
+    {
+      "id": "1fc2",
+      "name": "Tajul Islam",
+      "code": "23423",
+      "description": "bfgv",
+      "quantity": "3e3",
+      "unit": "rf",
+      "pricePerUnit": "5676",
+      "expiryDate": "04--07-2028",
+      "batchNumber": "",
+      "supplierName": "fdvdfv",
+      "supplierId": "3r3r",
+      "purchaseDate": "04--07-2027",
+      "storageLocation": "fnfgn",
+      "status": "mhnh"
+    },
+    {
+      "id": "4b0e",
+      "name": "Mango",
+      "code": "2342",
+      "description": "fruits",
+      "quantity": "23141",
+      "unit": "11",
+      "pricePerUnit": "5676",
+      "expiryDate": "04--07-2028",
+      "batchNumber": "233e",
+      "supplierName": "fdvdfv",
+      "supplierId": "233",
+      "purchaseDate": "04--07-2027",
+      "storageLocation": "dfa",
+      "status": "instock"
+    }
+  ],
+  "seller": [
+    {
+      "id": "80e6",
+      "name": "Tajul Islam",
+      "contactEmail": "tajulislam810@gmail.com",
+      "contactPhone": "1731403986",
+      "address": "Haji Chan Miyan Bari, West Battali, Duttapara, Chandraganj, Lakshmipur, Bangladesh"
+    },
+    {
+      "id": "7aec",
+      "name": "Imtiaz Uddin",
+      "contactEmail": "imtiaz@gmail.com",
+      "contactPhone": "1731409387",
+      "address": "Dhaak"
+    },
+    {
+      "id": "7e1d",
+      "name": "Aman Ullah",
+      "contactEmail": "aman@gmail.com",
+      "contactPhone": "1862549738",
+      "address": "Thakurgaon"
+    },
+    {
+      "id": "e371",
+      "name": "Babu",
+      "contactEmail": "babu@gmail.com",
+      "contactPhone": "0152487463",
+      "address": "Dhaka"
+    },
+    {
+      "id": "9fb6",
+      "name": "Fahim",
+      "contactEmail": "fahim@gmail.com",
+      "contactPhone": "1846864384",
+      "address": "Mugdha"
+    },
+    {
+      "id": "4c65",
+      "requestCode": "101",
+      "items": [
+        {
+          "rawMaterialId": "4b0e",
+          "quantity": 7
+        }
+      ]
+    },
+    {
+      "id": "0454",
+      "name": "Babu",
+      "contactEmail": "wasim@gmail.com",
+      "contactPhone": "1786582827",
+      "address": "Mirpur"
+    }
+  ],
+  "imports": [
+    {
+      "id": "0",
+      "sellerId": "Tajul Islam",
+      "materialId": 0,
+      "quantity": 4,
+      "unitPrice": 1,
+      "importDate": "2025-06-03T19:28:58.279Z",
+      "totalPrice": 4,
+      "materialName": "Mango"
+    },
+    {
+      "id": "0",
+      "sellerId": "Aman Ullah",
+      "materialId": "Imtiaz Uddin",
+      "quantity": 5,
+      "unitPrice": 4,
+      "importDate": "2025-06-03T19:29:34.184Z",
+      "totalPrice": 20
+    },
+    {
+      "id": "0",
+      "sellerId": "Babu",
+      "materialId": "Mango",
+      "quantity": 6,
+      "unitPrice": 2,
+      "importDate": "2025-06-03T19:34:30.533Z",
+      "totalPrice": 12
+    },
+    {
+      "id": "0",
+      "sellerId": "Fahim",
+      "materialId": "Imtiaz Uddin",
+      "quantity": 6,
+      "unitPrice": 5,
+      "importDate": "2025-06-03T19:45:59.154Z",
+      "totalPrice": 30
+    },
+    {
+      "id": "0",
+      "sellerId": "Aman Ullah",
+      "materialId": "Mango",
+      "quantity": 6,
+      "unitPrice": 5,
+      "importDate": "2025-06-03T21:34:11.486Z",
+      "totalPrice": 30
+    },
+    {
+      "id": "0",
+      "sellerId": "Fahim",
+      "materialId": "Mango",
+      "quantity": 2,
+      "unitPrice": 6,
+      "importDate": "2025-06-04T10:05:36.963Z",
+      "totalPrice": 12
+    },
+    {
+      "id": "0",
+      "sellerId": "Aman Ullah",
+      "materialId": "Mango",
+      "quantity": 6,
+      "unitPrice": 4,
+      "importDate": "2025-06-04T10:16:10.037Z",
+      "totalPrice": 24
+    },
+    {
+      "id": "0",
+      "sellerId": "Imtiaz Uddin",
+      "materialId": "Mango",
+      "quantity": 22,
+      "unitPrice": 33,
+      "importDate": "2025-06-04T10:30:07.453Z",
+      "totalPrice": 726
+    },
+    {
+      "id": "0",
+      "sellerId": "Tajul Islam",
+      "materialId": "Mango",
+      "quantity": 4,
+      "unitPrice": 3,
+      "importDate": "2025-06-04T22:28:17.837Z",
+      "totalPrice": 12
+    },
+    {
+      "id": "0",
+      "sellerId": "Fahim",
+      "materialId": "Mango",
+      "quantity": 5,
+      "unitPrice": 4,
+      "importDate": "2025-06-12T10:22:24.343Z",
+      "totalPrice": 20
+    },
+    {
+      "id": "0",
+      "sellerId": "Aman Ullah",
+      "materialId": "Mango",
+      "quantity": 10,
+      "unitPrice": 3,
+      "importDate": "2025-06-12T10:27:50.407Z",
+      "totalPrice": 30
+    },
+    {
+      "id": "0",
+      "sellerId": "80e6",
+      "materialId": "4b0e",
+      "quantity": 4,
+      "unitPrice": 3,
+      "importDate": "2025-06-12T13:04:45.192Z",
+      "totalPrice": 12,
+      "sellerName": "Tajul Islam",
+      "materialName": "Mango"
+    },
+    {
+      "id": "0",
+      "sellerId": "Tajul Islam",
+      "materialId": "Mango",
+      "quantity": 2,
+      "unitPrice": 8,
+      "importDate": "2025-06-12T13:07:46.081Z",
+      "totalPrice": 16
+    }
+  ],
+  "manufacture": [
+    {
+      "id": "d4cf",
+      "requestCode": "2222",
+      "rqstDate": "2025-06-05",
+      "items": [
+        {
+          "rawMaterialId": "4b0e",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "4ba6",
+      "requestCode": "334",
+      "rqstDate": "2025-06-05",
+      "items": [
+        {
+          "rawMaterialId": "4b0e",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "7ec2",
+      "requestCode": "555",
+      "rqstDate": "2025-06-05",
+      "items": [
+        {
+          "rawMaterialId": "4b0e",
+          "quantity": 6
+        },
+        {
+          "rawMaterialId": "1fc2",
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "id": "8b30",
+      "requestCode": "1223e324",
+      "rqstDate": "2025-06-12",
+      "items": [
+        {
+          "rawMaterialId": "4b0e",
+          "quantity": 6
+        }
+      ]
+    },
+    {
+      "id": "ab6d",
+      "requestCode": "rq1",
+      "rqstDate": "2025-06-22",
+      "items": [
+        {
+          "rawMaterialId": "13",
+          "quantity": 10
+        },
+        {
+          "rawMaterialId": "15",
+          "quantity": 20
+        },
+        {
+          "rawMaterialId": "55",
+          "quantity": 30
+        }
+      ]
+    }
+  ],
+  "category": [
+    {
+      "id": "d375",
+      "name": "Gastrology"
+    }
+  ],
+  "subcategory": [
+    {
+      "id": "603f",
+      "name": "Capsule",
+      "categoryId": "d375",
+      "categoryName": "Gastrology"
+    },
+    {
+      "id": "f774",
+      "name": "Tablet",
+      "categoryId": "d375",
+      "categoryName": "Gastrology"
+    },
+    {
+      "id": "9d88",
+      "name": "Injection",
+      "categoryId": "d375",
+      "categoryName": "Gastrology"
+    }
+  ],
+  "orders": [
+    {
+      "id": "506c",
+      "orderCode": "1CTPRX",
+      "date": "2025-06-21T19:20:39.487Z",
+      "customerName": "Tajul Islam",
+      "phone": "01731403986",
+      "paymentMethod": "mobile",
+      "mobileType": "bKash",
+      "address": "Haji Chan Miyan Bari, West Battali, Duttapara, Chandraganj, Lakshmipur, Bangladesh",
+      "items": [
+        {
+          "id": 2,
+          "productId": 2,
+          "name": "Napa",
+          "productCode": "N009",
+          "price": 1.04,
+          "quantity": 1,
+          "totalPrice": 1.04
+        },
+        {
+          "id": 8,
+          "productId": 8,
+          "name": "Seclo",
+          "productCode": "S575",
+          "price": 5,
+          "quantity": 1,
+          "totalPrice": 5
+        },
+        {
+          "id": 18,
+          "productId": 18,
+          "name": "Losectil",
+          "productCode": "L008",
+          "price": 2.06,
+          "quantity": 1,
+          "totalPrice": 2.06
+        },
+        {
+          "id": 22,
+          "productId": 22,
+          "name": "Tushka",
+          "productCode": "T074",
+          "price": 234,
+          "quantity": 1,
+          "totalPrice": 234
+        }
+      ],
+      "subtotal": 242.1,
+      "vat": 36.315,
+      "deliveryFee": 60,
+      "total": 338.41499999999996
+    },
+    {
+      "id": "eb0d",
+      "orderCode": "5PWUHB",
+      "date": "2025-06-21T20:50:58.963Z",
+      "customerName": "Tajul Islam",
+      "phone": "01731403986",
+      "paymentMethod": "mobile",
+      "mobileType": "bKash",
+      "address": "Haji Chan Miyan Bari, West Battali, Duttapara, Chandraganj, Lakshmipur, Bangladesh",
+      "items": [
+        {
+          "id": 131,
+          "productId": 78,
+          "name": "Bioxin",
+          "productCode": "B004",
+          "price": 12,
+          "quantity": 1,
+          "totalPrice": 12
+        }
+      ],
+      "subtotal": 12,
+      "vat": 1.7999999999999998,
+      "deliveryFee": 60,
+      "total": 73.8
+    },
+    {
+      "id": "2860",
+      "orderCode": "N9MELE",
+      "date": "2025-06-21T20:53:50.286Z",
+      "customerName": "Tajul Islam",
+      "phone": "01731403986",
+      "paymentMethod": "mobile",
+      "mobileType": "bKash",
+      "address": "Haji Chan Miyan Bari, West Battali, Duttapara, Chandraganj, Lakshmipur, Bangladesh",
+      "items": [
+        {
+          "id": 132,
+          "productId": 2,
+          "name": "Napa",
+          "productCode": "N009",
+          "price": 1.04,
+          "quantity": 1,
+          "totalPrice": 1.04
+        },
+        {
+          "id": 133,
+          "productId": 8,
+          "name": "Seclo",
+          "productCode": "S575",
+          "price": 5,
+          "quantity": 1,
+          "totalPrice": 5
+        }
+      ],
+      "subtotal": 6.04,
+      "vat": 0.9059999999999999,
+      "deliveryFee": 60,
+      "total": 66.946
+    }
+  ]
+}

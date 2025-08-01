@@ -1,0 +1,32 @@
+<div class="report-container">
+  <h2>{{ reportTitle }}</h2>
+
+  <table class="report-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Unit Price (৳)</th>
+        <th>Total (৳)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reportData">
+        <td>{{ item.product }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.quantity * item.price }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3"><strong>Total</strong></td>
+        <td><strong>{{ totalAmount }} ৳</strong></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="report-footer">
+    <p>Report generated on {{ today | date:'medium' }}</p>
+  </div>
+</div>

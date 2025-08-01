@@ -1,0 +1,47 @@
+<header class="topnav">
+  <div class="logo" ><button mat-button routerLink="/home"><h2>PharmaManage</h2></button></div>
+  <div class="nav-right">
+    <button class="icon-btn" title="Notifications">
+      🔔
+      <span class="badge">3</span>
+    </button>
+    <div class="user-profile">
+      <span>Admin</span>
+      <img src="assets/Image/p.jpg" alt="User Avatar" />
+    </div>
+  </div>
+</header>
+
+<!-- Main Container -->
+<div class="main-container">
+
+  <nav class="sidebar">
+  <ul>
+    <li routerLink="dash">Dashboard</li>
+        <!-- Manufacture with nested submenu -->
+    <li class="has-submenu">
+      <span>Manufacture ▾</span>
+      <ul class="submenu">
+        
+        <li routerLink="rawlist">Raw Materials</li>
+        <li routerLink="seller">Raw Material Supplier</li>
+        <li routerLink="imprt">Raw Material Import</li>
+        <li routerLink="manu">Manufacturing</li>
+      </ul>
+    </li>
+    
+     <li routerLink="category">Category</li>
+     <li routerLink="subcategory">Sub Category</li>
+    <li routerLink="prolist">Medicines</li>
+    <li routerLink="ordermanage">Order Management</li>
+    <!-- <li routerLink="stock">Stock</li> -->
+    <li routerLink="inventory">Inventory</li>
+    <li routerLink="sales">Sales Report</li>
+    <!-- <li>Reports</li>
+    <li>Settings</li> -->
+  </ul>
+</nav>
+  <main class="dashboard-body">    
+    <router-outlet></router-outlet>
+  </main>  
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form class="register-form" #formRegistration="ngForm" (ngSubmit)="registerUser(formRegistration.value)">
+  <h1>Create Account</h1>
+
+  <div class="form-group">
+    <div>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter full name" ngModel>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Enter email" ngModel>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone" placeholder="Enter phone number" ngModel>
+    </div>
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter username" ngModel>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" ngModel>
+    </div>
+    <div>
+      <label for="confirmpassword">Confirm Password</label>
+      <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Re-enter password" ngModel>
+    </div>
+  </div>
+
+  <button type="submit">Register</button>
+
+  <p class="login-link">Already have an account? <a routerLink="/login">Login here</a></p>
+</form>
+
+</body>
+</html>
+
+

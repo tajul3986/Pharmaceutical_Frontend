@@ -1,0 +1,133 @@
+<div class="admin-order-container">
+  <h2 class="section-title">📦 All Orders</h2>
+
+  <div *ngIf="orders.length > 0; else noOrders">
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Order Code</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Items</th>
+          <th>Total (৳)</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.customerName }}</td>
+          <td>#{{ order.orderCode }}</td>
+          <td>{{ order.phone }}</td>
+          <td>{{ order.address }}</td>
+          <td>{{ getTotalItems(order) }} items</td>
+          <td>{{ order.total }}</td>
+          <td>{{ order.date | date: 'medium' }}</td>
+          <td>
+            <button class="delete-btn" (click)="deleteOrder(order.id!)" title="Delete">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noOrders>
+    <p class="no-orders-text">🛒 No orders found.</p>
+  </ng-template>
+</div>
+
+
+
+
+<!-- with admin approval -->
+
+<!-- <div class="admin-order-list-container">
+  <div class="header-section">
+    <h2 class="page-title">
+      <span class="icon">📦</span>
+      <span class="text">Order Management</span>
+    </h2>
+    <div class="order-count-badge">
+      {{orders.length}} {{orders.length === 1 ? 'order' : 'orders'}}
+    </div>
+  </div>
+
+  <div class="order-table-container" *ngIf="orders.length > 0; else noOrders">
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Contact</th>
+          <th>Delivery</th>
+          <th>Items</th>
+          <th>Total</th>
+          <th>Order Code</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders" [class.approved]="order.approved">
+          <td class="customer-cell">
+            <div class="customer-name">{{ order.customerName }}</div>
+          </td>
+          <td class="phone-cell">
+            <a href="tel:{{order.phone}}" class="phone-link">{{ order.phone }}</a>
+          </td>
+          <td class="address-cell">
+            <div class="address-text" [title]="order.address">{{ order.address }}</div>
+          </td>
+          <td class="items-cell">
+            <span class="items-badge">{{ getTotalItems(order) }} items</span>
+          </td>
+          <td class="total-cell">
+            <span class="total-amount">৳{{ order.total }}</span>
+          </td>
+          <td class="code-cell">
+            <span class="order-code">{{ order.orderCode }}</span>
+          </td>
+          <td class="status-cell">
+            <span class="status-badge" [class.approved]="order.approved">
+              {{ order.status }}
+            </span>
+          </td>
+          <td class="date-cell">
+            <div class="date">{{ order.date | date:'shortDate' }}</div>
+            <div class="time">{{ order.date | date:'shortTime' }}</div>
+          </td>
+          <td class="actions-cell">
+            <button
+              class="action-btn approve-btn"
+              (click)="approveOrder(order.id!)"
+              [disabled]="order.approved"
+              matTooltip="Approve Order"
+            >
+              <span class="icon">✓</span>
+            </button>
+            <button
+              class="action-btn delete-btn"
+              (click)="deleteOrder(order.id!)"
+              matTooltip="Delete Order"
+            >
+              <span class="icon">✕</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noOrders>
+    <div class="empty-state">
+      <div class="empty-icon">🛒</div>
+      <h3 class="empty-title">No Orders Found</h3>
+      <p class="empty-message">When new orders come in, they'll appear here.</p>
+    </div>
+  </ng-template>
+</div>
+
+ -->

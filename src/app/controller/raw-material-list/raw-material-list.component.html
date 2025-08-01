@@ -1,0 +1,203 @@
+<!-- <div class="top-bar">  
+  <h1>Raw Materials</h1>
+    <button routerLink="/admin/raw">+ Add Material</button>
+</div>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Description</th>
+    <th>Quantity</th>
+    <th>Unit</th>
+    <th>Price/Unit</th>
+    <th>Expire Date</th>
+    <th>Batch Number</th>
+    <th>Storage Location</th>
+    <th>Status</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let raw of products">
+      <td>{{raw.id}}</td>
+      <td>{{raw.name}}</td>
+      <td>{{raw.code}}</td>
+      <td>{{raw.description}}</td>
+      <td>{{raw.quantity}}</td>
+      <td>{{raw.unit}}</td>
+      <td>{{raw.pricePerUnit}}</td>
+      <td>{{raw.expiryDate | date: 'mediumDate'}}</td>
+      <td>{{raw.batchNumber}}</td>
+      <td>{{raw.storageLocation}}</td>
+      <td>{{raw.status}}</td>
+      <td>
+        <button (click) = "editRaw(raw)">Edit</button>
+        <button (click) = "deleteRaw(raw)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Edit
+<div *ngIf="divStatus">
+  <h2 style="text-align: center;">
+    Edit product
+  </h2>
+    <form #rawData = "ngForm" (ngSubmit) = "updateRaw(rawData.value)">
+      <label for="status">Material Name:</label>
+      <input type="text" name="name" [(ngModel)] = "raw.name" />
+      <br>
+      <label for="status">Code:</label>
+      <input type="text" name="code" [(ngModel)] = "raw.code"/>
+      <br>
+      <label for="status">Description:</label>
+      <input type="text" name="description" [(ngModel)] = "raw.description"/>
+      <br>
+      <label for="status">Quantity:</label>
+      <input type="number" name="quantity" [(ngModel)] = "raw.quantity"/>
+      <br>
+      <label for="status">Unit:</label>
+      <input type="text" name="unit" [(ngModel)] = "raw.unit"/>
+      <br>
+      <label for="status">Price/Unit:</label>
+      <input type="text" name="pricePerUnit" [(ngModel)] = "raw.pricePerUnit"/>
+      <br>
+      <label for="status">Expire Date:</label>
+      <input type="date" name="expiryDate" [(ngModel)] = "raw.expiryDate"/>
+      <br><br>
+      <label for="status">Batch Number:</label>
+      <input type="text" name="batchNumber" [(ngModel)] = "raw.batchNumber"/>
+      <br>
+      <label for="status">Storage Location:</label>
+      <input type="text" name="storageLocation" [(ngModel)] = "raw.storageLocation"/>
+      <br>
+      <label for="status">Status:</label>
+      <input type="text" name="status" [(ngModel)] = "raw.status"/>
+      <br>
+      <input type="submit" value="Update" />
+    </form>
+</div> -->
+
+
+
+
+
+
+
+<!-- Include Font Awesome in index.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<!-- Top Bar -->
+<div class="top-bar">  
+  <h1><i class="fas fa-boxes"></i> Raw Materials</h1>
+  <button routerLink="/admin/raw">
+    <i class="fas fa-plus-circle"></i> Add Material
+  </button>
+</div>
+
+<!-- Table -->
+<table class="raw-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th><i class="fas fa-box"></i> Name</th>
+      <th><i class="fas fa-barcode"></i> Code</th>
+      <th><i class="fas fa-align-left"></i> Description</th>
+      <th><i class="fas fa-balance-scale"></i> Quantity</th>
+      <th><i class="fas fa-ruler"></i> Unit</th>
+      <th><i class="fas fa-dollar-sign"></i> Price/Unit</th>
+      <th><i class="fas fa-calendar-alt"></i> Expire Date</th>
+      <th><i class="fas fa-layer-group"></i> Batch</th>
+      <th><i class="fas fa-warehouse"></i> Location</th>
+      <th><i class="fas fa-check-circle"></i> Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let raw of products">
+      <td>{{raw.id}}</td>
+      <td>{{raw.name}}</td>
+      <td>{{raw.code}}</td>
+      <td>{{raw.description}}</td>
+      <td>{{raw.quantity}}</td>
+      <td>{{raw.unit}}</td>
+      <td>{{raw.pricePerUnit}}</td>
+      <td>{{raw.expiryDate | date: 'mediumDate'}}</td>
+      <td>{{raw.batchNumber}}</td>
+      <td>{{raw.storageLocation}}</td>
+      <td>{{raw.status}}</td>
+      <td>
+        <button class="edit-btn" (click)="editRaw(raw)">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button class="delete-btn" (click)="deleteRaw(raw)">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Edit Form -->
+<div *ngIf="divStatus" class="edit-form">
+  <h2><i class="fas fa-pen"></i> Edit Material</h2>
+  <form #rawData="ngForm" (ngSubmit)="updateRaw(rawData.value)">
+    <div class="form-group">
+      <label><i class="fas fa-box"></i> Name:</label>
+      <input type="text" name="name" [(ngModel)]="raw.name" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-barcode"></i> Code:</label>
+      <input type="text" name="code" [(ngModel)]="raw.code" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-align-left"></i> Description:</label>
+      <input type="text" name="description" [(ngModel)]="raw.description" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-balance-scale"></i> Quantity:</label>
+      <input type="number" name="quantity" [(ngModel)]="raw.quantity" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-ruler"></i> Unit:</label>
+      <input type="text" name="unit" [(ngModel)]="raw.unit" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-dollar-sign"></i> Price/Unit:</label>
+      <input type="text" name="pricePerUnit" [(ngModel)]="raw.pricePerUnit" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-calendar-alt"></i> Expiry Date:</label>
+      <input type="date" name="expiryDate" [(ngModel)]="raw.expiryDate" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-layer-group"></i> Batch Number:</label>
+      <input type="text" name="batchNumber" [(ngModel)]="raw.batchNumber" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-warehouse"></i> Storage Location:</label>
+      <input type="text" name="storageLocation" [(ngModel)]="raw.storageLocation" />
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-check-circle"></i> Status:</label>
+      <input type="text" name="status" [(ngModel)]="raw.status" />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="update-btn">
+        <i class="fas fa-save"></i> Update
+      </button>
+    </div>
+  </form>
+</div>
+

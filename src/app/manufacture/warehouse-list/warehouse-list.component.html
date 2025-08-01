@@ -1,0 +1,37 @@
+<div class="warehouse-container">
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="loading">Loading warehouses...</div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <!-- Warehouse Table -->
+  <div *ngIf="!isLoading && !errorMessage">
+    <h2>Warehouse List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Capacity</th>
+          <th>Contact Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let warehouse of warehouses">
+          <td>{{ warehouse.name }}</td>
+          <td>{{ warehouse.location }}</td>
+          <td>{{ warehouse.capacity }}</td>
+          <td>{{ warehouse.contactEmail }}</td>
+          <td>
+            <button [routerLink]="['/warehouses/edit', warehouse.id]">Edit</button>
+            <button (click)="deleteWarehouse(warehouse.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button routerLink="/warehouses/new" class="add-button">Add New Warehouse</button>
+  </div>
+</div>

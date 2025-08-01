@@ -1,0 +1,16 @@
+.warehouse-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.875rem;
+}

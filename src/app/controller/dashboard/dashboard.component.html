@@ -1,0 +1,53 @@
+
+  <main class="dashboard-body">
+
+  <section class="summary-cards">
+    <div class="card">Total Medicines<br /><span>{{ totalMedicines }}</span></div>
+    <div class="card">Stock Alerts<br /><span>{{ stockAlerts }}</span></div>
+    <div class="card">Monthly Sales<br /><span>{{ monthlySales }}</span></div>
+    <div class="card">New Orders<br /><span>{{ newOrders }}</span></div>
+  </section>
+
+  <section class="charts-section">
+    <div class="chart chart-bar">
+      <h4>Bar Chart: Monthly Sales</h4>
+      <canvas baseChart
+        [data]="barChartData"
+        [type]="barChartType"
+        [options]="barChartOptions">
+      </canvas>
+    </div>
+
+    <div class="chart chart-pie">
+      <h4>Pie Chart: Stock Distribution</h4>
+      <canvas baseChart
+        [data]="pieChartData"
+        [type]="pieChartType"
+        [options]="pieChartOptions">
+      </canvas>
+    </div>
+  </section>
+
+  <section class="table-section">
+    <h3>Recent Orders</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Medicine</th>
+          <th>Quantity</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of recentOrders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.medicine }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.date | date: 'medium'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+</main>
